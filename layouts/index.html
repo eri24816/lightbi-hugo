@@ -4,7 +4,7 @@
 </div>
 
 <div class="container" role="main">
-  <div class="row">
+  <div class="row g-5">
     {{ with .Content }}
     <div class="well">
       {{.}}
@@ -12,7 +12,7 @@
     {{ end }}
 
 
-    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections ) 9 }}
+    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections )  }}
     {{ range $pag.Pages }}
     {{ partial "post_preview_card" . }}
     {{ end }}

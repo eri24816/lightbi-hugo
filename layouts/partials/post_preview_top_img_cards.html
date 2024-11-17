@@ -1,9 +1,15 @@
 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
     <a href="{{ .Permalink }}">
-        <div class="card single-post-card h-100 shadow-effect border">
-            {{ with partial "get_image" . }}
-            <img src="{{ ( .Resize " 500x" ).RelPermalink }}" alt="{{ .Title }}"
-                class="card-img-top img-fluid lazyload">
+        <div class="card single-post-card h-100 shadow-effect">
+            {{ if (strings.HasPrefix .Params.image "http") }}
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="card-img-bottom img-fluid lazyload">
+            {{ else if .Params.image }}
+                {{ with partial "get_image" . }}
+                    <img src="{{ ( .Resize " 500x" ).RelPermalink }}" alt="{{ .Title }}"
+                    class="card-img-bottom img-fluid lazyload">
+                {{ end }}
+            {{ else }}
+                <img src="https://i.imgur.com/l4JlXaT.png" alt="{{ .Title }}" class="card-img-bottom img-fluid lazyload">
             {{ end }}
 
             {{ if .Params.video }}
