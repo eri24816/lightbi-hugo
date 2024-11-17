@@ -8,6 +8,26 @@
 
 /* --- General --- */
 
+.dropdown-menu {
+  background-color: #171717;
+}
+
+.dropdown-item {
+  color: #fff;
+
+  --bs-dropdown-link-active-bg: #373737;
+}
+
+.dropdown-item:hover {
+  background-color: #272727;
+}
+
+.dropdown-item:active {
+  background-color: #373737;
+}
+
+
+
 body {
   font-size: 1.2rem;
   color: #344854;
