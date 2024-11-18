@@ -40,6 +40,10 @@
   --bs-card-color: #f3f3f3;
 }
 
+:root[data-theme="dark"] .list-group-item {
+  background-color: transparent;
+}
+
 body {
   font-size: 1.2rem;
   color: #344854;
