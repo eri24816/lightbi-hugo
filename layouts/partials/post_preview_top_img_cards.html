@@ -34,9 +34,9 @@
 
                     {{ if .Description }}
                     {{ .Description }}
-
                     {{ else }}
-                    {{ .Summary }}
+                    {{ $summaryLength := default 150 .Site.Params.summaryLength }}
+                    {{ .Summary | plainify | truncate $summaryLength }}
                     {{ end }}
                 </div>
 
